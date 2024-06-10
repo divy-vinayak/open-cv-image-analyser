@@ -1,7 +1,6 @@
-from typing import Union
-
-from fastapi import FastAPI, File, UploadFile
+from fastapi import FastAPI, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
+from imageAnalyser import analyze_image
 
 app = FastAPI()
 
@@ -29,4 +28,6 @@ def read_root():
 async def create_upload_file(file: UploadFile):
     # got the file here
     # process image file -> extract the result schema -> send back to user
-    return {"filename": file.filename}
+    print(file.file)
+    res = analyze_image(file.file)
+    return {"data": res}

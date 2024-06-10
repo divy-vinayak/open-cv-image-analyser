@@ -30,7 +30,7 @@ export function UploadPhoto({
             })
                 .then((response) => response.json())
                 .then((data) => {
-                    setResult(data);
+                    setResult(data.data);
                     console.log(data);
                 })
                 .catch((error) => console.error("Error:", error));

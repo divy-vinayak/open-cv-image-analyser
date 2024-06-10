@@ -10,7 +10,7 @@ export default function Analyser() {
             <div className="w-full h-full border-2 border-gray-400 rounded-lg p-2">
                 <UploadPhoto setResult={setResult} />
             </div>
-            <div className="w-full h-full border-2 border-gray-400 rounded-lg p-2">
+            <div className="w-full h-full border-2 border-gray-400 rounded-lg p-2 overflow-y-scroll">
                 {result ? <TestResult result={result} /> : "Upload a file"}
             </div>
         </>
