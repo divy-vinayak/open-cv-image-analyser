@@ -1,0 +1,13 @@
+version: '2.24'
+
+services:
+  frontend:
+    build: ./frontend
+    container_name: alemeno-task-frontend
+    ports:
+      - 4173:4173
+  backend:
+    build: ./backend
+    container_name: alemeno-task-backend
+    ports:
+      - 8000:8000
